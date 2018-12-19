@@ -1,0 +1,72 @@
+ Bandit-Over the Wire
+How to connect?
+ssh bandit.labs.overthewire.org –p 2220 –l bandit0         Red: Port     Blue: User
+or 
+ssh bandit0@bandit
+
+Bandit0
+File:Readme
+The password of this level is already given so we need to find the password for next level that is done using the command ls(listing files) and cat(used for reading a file)
+
+Bandit1
+File: -
+The password retrieved from the last level is used to open the files of this level. The commands ussed here are again the same as of Level0 but the difference is in the way of using command Cat (./)
+
+Bandit2
+File: spaces in this filename
+This level is similar to lavel ! as in this also there is a variation in the using the syntax of cat command (using “  ”)
+
+Bandit3
+Directory: Inherent
+Desired File: .hidden
+This level makes us familiar with the directories and how to enter them using the command cd and it later uses the ls with the parameter of (-a it does not ignore the entries starting with .) to display the information in it
+
+Bandit4
+Directory: Inherent
+Desired File: ./-file07
+This level is very similar to level 3 as it uses the same commands
+
+Bandit5
+Directory: Inherent
+Desired File: ./maybehere07/.file2  
+Similar to the previous levels but it also uses the command Find that is one of the most important commands
+Features of this command:
+! : not
+c is used to signify bytes
+
+Bandit6
+Desired File: /var/lib/dpkg/info/bandit7.password
+This level uses the Find command with the sub categories of user group and size which results in a single file being returned that is read afterwards to get the password
+
+Bandit7
+File: data.txt
+In this level we are given the file with the name data.txt that returns a list of words with passwords out of which we need to find out the word “MILLIONTH” which is done using he command grep (used to search for a particular word in the file)
+
+Bandit8
+File: data.txt
+This levels introduces us to the command of sort and uniq. Sort command is used to sort the the list of lines given such that all the similar lines come together whereas the uniq command is used to list all the lines only once but when used with the attribute (-u) it compares it with the upper and the lower lines and gives us the line that appears only once
+
+Bandit9
+File: data.txt
+In this level we directly use the grep command and search for an ‘=’ sign that is followed by a list of lines being returned in which one line gives us the password of the next level
+
+Bandit10
+File: data.txt
+In this level we need to covert the given line to base 64 that is done using the command base64 along with the attribute of (-d) that stands for decoding and we also specify the file
+
+Bandit11
+File: data.txt
+We use the command translate in this level ie tr which is used to change the alphabets to the required for example in this  we need to change a to n and vice versa its syntax can be understood as tr (A-Za-z) (N-ZA-Mn-za-m)     Red : Normal sequence Blue : Required sequence
+
+Bandit12
+Desired File: data8_zcat
+In my opinion this is one of the most difficult levels that uses a alot of commands like xxd(hexadump), file(gives details) ,mv(Changes the format), mkdir(Makes a temporary Directory), cp(copies file to a directory ) and other multiple commands tht depends on the extension of files. The File commands gives us the details of the file and also tells us to which type it must be converted next. Finally, in the end we get a filethat is of type ASCII which is read and the password is retreived
+
+Bandit13 & Bandit14
+Desired File : /etc/bandit_pass/bandit14
+Localhost:30000
+This level gives us a private SSH key that can be used to log into the next level directly this uses the attribute(-i) that gives the access to the private key. This directly connects us to the next level from where we retreive the password of that level and of the next level using the command nc which is used to tell any local server and get data from it.
+
+Bandit15 
+Localhost:30001
+This level uses the command openssl s_client and it then asks for the level of the current level to get the level for the next that is told by the local host
