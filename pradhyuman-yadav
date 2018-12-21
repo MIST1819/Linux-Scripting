@@ -1,0 +1,117 @@
+Level 0
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+Password-bandit 0
+
+Level 1
+ls                                                                                              
+cat readme#to look into readme fie
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+Level 2
+ls                                                                                            
+cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Level 3
+ls
+cat ./spaces\ in\ this\ filename
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Level 4
+ls
+cd inhere
+ls -a
+cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level 5
+ls
+file ./*
+cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Level 6
+ls
+cd inhere
+find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level 7
+ls
+cd inhere
+find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+cat ./maybehere07/.file2
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+Level 8
+ls
+cat data.txt | sort | uniq -u
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+Level 9
+ls
+cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+Level 10
+ls
+strings data.txt | grep "="
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+Level 11
+ls
+cat data.txt | base64 --decode
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Level 12
+ls
+cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Level 13
+ls
+mkdir /tmp/test_123
+cd /tmp/test_123
+cp ~/data.txt /.
+file data.txt
+xxd -r data.txt > data_xxd_reverse
+file data_xxd_reverse
+zcat data_xxd_reverse > data_zcat
+file data_zcat
+bzip2 -d data_zcat
+file data_zcat.out
+zcat data_zcat.out > data_zcat_2
+file data_zcat_2
+tar xvf data_zcat_2
+file data5.bin
+tar xvf data5.bin
+file data6.bin
+bzip2 -d data6.bin
+file data6.bin.out
+tar xvf data6.bin.out
+file data8.bin
+zcat data8.bin > data8_zcat
+file data8_zcat
+cat data8_zcat
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+Level 14
+ls
+ssh -i sshkey.private bandit14@localhost
+cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+Level 15
+telnet localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Level 16
+openssl s_client -connect localhost:30001 -ign_eof
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
